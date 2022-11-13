@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+    <style>
+        body {
+            font-family: arial,sans-serif;
+        }
+        .textinput:focus {
+            -webkit-box-shadow: inset 0 1px 2px rgb(0 0 0 / 30%);
+            -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.3);
+            box-shadow: inset 0 1px 2px rgb(0 0 0 / 30%);
+            border: 1px solid #4d90fe;
+            outline: none;
+        }
+        html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-weight: inherit;
+            font-style: inherit;
+            font-size: 100%;
+            vertical-align: baseline;
+            text-decoration: none;
+        }
+        .imgG {
+            padding-left: 20px;
+            padding-top: 20px;
+            width: 74px;
+            height: 24px;
+            aspect-ratio: auto 74 / 24;
+        }
+        .photo {
+            display: inline-block;
+
+            padding: 0px 0px 0px 0px;
+            width: 100%;
+            margin: 0px;
+
+        }
+        .appbar {
+            color: #d93025;
+            font-size: 20px;
+            margin: 36px 35px;
+
+        }
+        .longline {
+            border-bottom: 1px solid #ebebeb;
+        }
+        .bigD {
+            max-width: 1140px;
+            min-width: 200px;
+            width: 96%;
+            margin: 40px 2% 0 45px;
+        }
+        .d1 {
+            width: 100%;
+            clear: both;
+        }
+        .d2 {
+            clear: both;
+        }
+        div.d3 {
+            float: left;
+            display: inline-block;
+            min-width: 167px;
+            width: 16%;
+            font-size: 16px;
+            min-height: 42px;
+            font-weight: 500;
+            color: #333;
+            vertical-align: middle;
+        }
+        div.examp {
+            height: 30px;
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .beetw {
+            float: left;
+            display: inline-block;
+            min-width: 167px;
+            min-height: 41px;
+            vertical-align: middle;
+            width: 50%;
+        }
+        .d4 {
+            float: left;
+            display: inline-block;
+            width: 33%;
+            font-size: 13px;
+            font-weight: 700;
+            color: #777;
+            padding-left: 5px;
+            vertical-align: middle;
+        }
+        .word {
+            float: left;
+            display: inline-block;
+            min-width: 167px;
+            width: 16%;
+            height: 42px;
+            color: #222;
+            font-size: 13px;
+            line-height: 16px;
+            vertical-align: middle;
+        }
+        .d5 {
+            float: left;
+            display: inline-block;
+            min-width: 167px;
+            min-height: 41px;
+            vertical-align: middle;
+            width: 50%;
+        }
+        .inpl {
+            padding-right: 16px;
+        }
+        .textinput {
+            -webkit-border-radius: 1px;
+            -moz-border-radius: 1px;
+            border-radius: 1px;
+            border: 1px solid #d9d9d9;
+            border-top: 1px solid #c0c0c0;
+            font-size: 13px;
+            height: 25px;
+            width: 100%;
+            padding: 1px 8px;
+        }
+        .d6 {
+            float: left;
+            display: inline-block;
+            width: 32%;
+            min-width: 160px;
+            margin: 0 0 8px 1%;
+            color: #555;
+            font-size: 11px;
+            padding-left: 5px;
+            vertical-align: middle;
+            position: relative;
+        }
+        .chngFF {
+            color: #666;
+            font-family: monospace;
+            font-size: 11px;
+            white-space: pre;
+        }
+        .linelong {
+            margin: 18px 0;
+            clear: both;
+            border-top: 1px solid #ebebeb;
+        }
+
+
+
+
+
+        #footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width; 100%;
+        }
+        .line {
+            background-color: #F2F2F2;
+            width: 100%;
+            height: 10px;
+            border-top: 1px solid #E4E4E4;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0px;
+            padding-left: 15px;
+
+        }
+        .menu_footer {
+            list-style-type: none;
+            padding-inline-start: 20px;
+            padding-inline-end: 20px;
+        }
+        .menu {
+            display: inline-block;
+            padding-right: 27px;
+
+        }
+        .elmn {
+            font-size: 14px;
+            color: #70757A;
+            text-decoration: none;
+            border-bottom: 1px dashed transparent;
+        }
+        .elmn: hover {
+            border-color: darken(#5f6368, 5%);
+        }
+        .line_first{
+            justify-content: flex-start;
+            color: #70757A;
+            font-size: 15px;
+            padding: 15px 35px;
+        }
+        d1 d5 input[type="text"], d1 d5{
+            width: 100%;
+            text-align: left;
+        }
+        .jfk-button {
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+            cursor: default;
+            font-size: 11px;
+            font-weight: bold;
+            text-align: center;
+            white-space: nowrap;
+            margin-right: 0px;
+            height: 27px;
+            line-height: 27px;
+            min-width: 54px;
+            outline: 0;
+            padding: 0 0px;
+        }
+        .jfk-button-action {
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            background-color: #4d90fe;
+            background-image: -webkit-linear-gradient(top,#4d90fe,#4787ed);
+            background-image: -moz-linear-gradient(top,#4d90fe,#4787ed);
+            background-image: -ms-linear-gradient(top,#4d90fe,#4787ed);
+            background-image: -o-linear-gradient(top,#4d90fe,#4787ed);
+            background-image: linear-gradient(top,#4d90fe,#4787ed);
+            border: 1px solid #3079ed;
+            color: #fff;
+        }
+        .jfk-button-action:hover {
+            background-color: #357ae8;
+            background-image: -webkit-linear-gradient(top,#4d90fe,#357ae8);
+            background-image: -moz-linear-gradient(top,#4d90fe,#357ae8);
+            background-image: -ms-linear-gradient(top,#4d90fe,#357ae8);
+            background-image: -o-linear-gradient(top,#4d90fe,#357ae8);
+            background-image: linear-gradient(top,#4d90fe,#357ae8);
+            border: 1px solid #2f5bb7;
+            border-image: initial;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="photo">
+        <a href="google.html">
+            <img class="imgG" src="https://www.google.com.ua/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google">
+        </a>
+    </div>
+    <div class="appbar">
+        <label style="margin-left:10px">Розширений пошук</label>
+    </div>
+    <div class="longline"></div>
+
+    <div class="bigD">
+        <form action="https://google.com/search" id="s1zaZb" method="GET" name="f">
+            <input value="uk" name="hl" type="hidden">
+            <div class="d1">
+                <div class="d2">
+                    <div class="d3">
+                        <div class="examp">
+                            <span>Знайти сторінки, що містять...</span>
+                        </div>
+                    </div>
+                        <div class="beetw">&nbsp;
+                        </div>
+                    <div class="d4">
+                    <div class="examp">Як це зробити в полі пошуку</div>
+                    </div>
+                    </div>
+            </div>
+            <div class="d1">
+                <div class="d2">
+                    <div class="word">
+                        <div class="examp">
+                            <label for="xX4UFf">усі ці слова:</label>
+                        </div>
+                    </div>
+                    <div class="d5">
+                        <div class="inpl">
+                            <input class="textinput" value="" autofocus="autofocus" id="xX4UFf" name="as_q" type="text">
+                        </div>
+                    </div>
+                    <div class="d6 dulCv">
+                        <div class="examp">Введіть важливі слова:  <span class="chngFF">триколірний рет-тер’єр</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="d2">
+                    <div class="word"> <div class="examp">
+                        <label for="CwYCWc">точне слово або фразу:</label>
+                    </div>
+                    </div>
+                    <div class="d5">
+                        <div class="inpl">
+                            <input class="textinput" value="" id="CwYCWc" name="as_epq" type="text">
+                        </div>
+                    </div>
+                    <div class="d6 dulCv"> <div class="examp">Візьміть точні слова в лапки:  <span class="chngFF">"рет-тер’єр"</span>
+                    </div>
+                    </div>
+                </div>
+                <div class="d2">
+                    <div class="word"> <div class="examp"> <label for="mSoczb">будь-яке з цих слів:</label>
+                    </div>
+                </div>
+                    <div class="d5">
+                        <div class="inpl">
+                            <input class="textinput" value="" id="mSoczb" name="as_oq" type="text">
+                        </div>
+                    </div>
+                    <div class="d6 dulCv">
+                        <div class="examp">Введіть <span class="chngFF">OR</span> між усіма потрібними словами:  <span class="chngFF">мініатюрні OR стандартні</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="d2">
+                    <div class="word">
+                        <div class="examp">
+                        <label for="t2dX1c">жодне з цих слів:</label>
+                        </div>
+                    </div>
+                    <div class="d5">
+                        <div class="inpl">
+                            <input class="textinput" value="" id="t2dX1c" name="as_eq" type="text">
+                        </div>
+                    </div>
+                    <div class="d6 dulCv">
+                        <div class="examp">Поставте знак мінус перед небажаними словами:  <span class="chngFF">-гризун, -"Джек Рассел"</span>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+            <div class="linelong"></div>
+            <div class="d2">
+                <div class="word"></div>
+                <div class="d5" style="text-align:right">
+                    <input id="CIGjud" name="tbs" type="hidden" value="">
+                    <input class="jfk-button jfk-button-action dUBGpe" style="-webkit-user-select:none;user-select:none;line-height:100%;height:30px;min-width:120px" value="Розширений пошук" type="submit">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="linelong"></div>
+
+    <footer id="footer">
+        <div class="line line_first">Україна</div>
+        <div class="line">
+            <ul class="menu_footer">
+                <li class="menu"><a class="elmn" href="#">Довідка</a></li>
+                <li class="menu"><a class="elmn" href="#">Конфіденційність</a></li>
+                <li class="menu"><a class="elmn" href="#">Умови</a></li>
+            </ul>
+        </div>
+
+    </footer>
+</body>

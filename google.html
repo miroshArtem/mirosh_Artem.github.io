@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+    <style>
+        a{
+            font-size: 13px;
+            padding-left: 15px;
+            font-family: arial,sans-serif;
+            color: #202124;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .searchI {
+            display: flex;
+            justify-content: right;
+            text-align: right;
+            padding-right: 15px;
+            padding-top: 15px;
+            padding-bottom: 50px;
+        }
+        .gl {
+            padding-top: 62px;
+            padding-bottom: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .photo {
+            width: 272px;
+            height: 92px;
+            aspect-ratio: auto 272 / 92;
+        }
+        body, input {
+            font-size: 14px;
+            font-family: arial,sans-serif;
+            color: #202124;
+            opacity: 1;
+        }
+        .lineS {
+            padding-top: 28px;
+            display: flex;
+            justify-content: center;
+        }
+        .search1 {
+            background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1_SZY1_KhaPv2AKSFl8myKRU1yYVUOQ355kftG7ek98JAuBG_7vr5sGLXictmAB_l7Bo&usqp=CAU) no-repeat 7px 2px;
+            background-size: auto 80%;
+            font-size: 14px;
+            font-family: arial,sans-serif;
+            border-style: solid;
+            border-color: Gainsboro;
+            color: #202124;
+            display: flex;
+            justify-content: center;
+            border-radius: 30px 30px;
+            padding-bottom: 5px;
+            padding-top: 5px;
+            padding-left: 35px;
+            height:20px;
+            width: 550px;
+            max-width: 550px;
+            min-width: 200px;
+        }
+        .search1:hover {
+            box-shadow: 0px 0px 3px 3px silver;
+        }
+        .search1:focus {
+            -webkit-box-shadow: inset 0 1px 2px rgb(0 0 0 / 30%);
+            -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.3);
+            box-shadow: 0px 0px 3px 3px silver;
+            border: 1px solid silver;
+            outline: none;
+        }
+        .search2 {
+            background-color: #f8f9fa;
+            border: 1px solid #f8f9fa;
+            border-radius: 4px;
+            color: #3c4043;
+            font-family: arial,sans-serif;
+            font-size: 14px;
+            margin: 29px 4px;
+            padding: 0 16px;
+            line-height: 27px;
+            height: 36px;
+            min-width: 54px;
+            text-align: center;
+            cursor: pointer;
+            user-select: none;
+        }
+        .search2:hover {
+            border-width: 2px;
+            border-color: Gainsboro;
+        }
+        .lang {
+            font-family: arial,sans-serif;
+            font-size: 13px;
+            color: #4d5156;
+            line-height: 28px;
+        }
+        .chlng {
+            color: #1a0dab;
+            font-family: arial,sans-serif;
+            font-size: 13px;
+            padding-left: 3px;
+            text-decoration: none;
+        }
+        .chlng: hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        #footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width; 100%;
+        }
+        .line {
+            background-color: #F2F2F2;
+            width: 100%;
+            height: 10px;
+            border-top: 1px solid #E4E4E4;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0px;
+
+        }
+        .menu_footer {
+            list-style-type: none;
+            padding-inline-start: 15px;
+            padding-inline-end: 20px;
+        }
+        .menu {
+            display: inline-block;
+            padding-right: 15px;
+
+        }
+        .elmn {
+            color: #70757A;
+            text-decoration: none;
+            border-bottom: 1px dashed transparent;
+        }
+        .elmn: hover {
+            border-color: darken(#5f6368, 5%);
+        }
+        .line_first{
+            justify-content: flex-start;
+            color: #70757A;
+            font-size: 15px;
+            padding: 15px 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="searchI">
+        <a href="https://www.google.com/intl/uk/gmail/about/">Gmail</a>
+        <a href="advancedSearch.html">Розширений пошук</a>
+        <a href="googleImages.html" target="_top">Зображення</a>
+    </div>
+
+    <div class="gl">
+        <img alt="Google" src="https://www.google.com.ua/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" class="photo">
+        </div>
+
+
+    <div class="lineS">
+        <form class="search" action="https://google.com/search">
+            <input class="search1"  type="text" placeholder="Пошук Google..." name="q">
+                <center>
+                    <input class="search2" name="btnK" tabindex="0" role="button" type="submit" value="Пошук Google">
+                    <input class="search2" name="btnI" type="submit" value="Мені пощастить">
+                </center>
+        </form>
+    </div>
+
+    <div class="lang">
+        <center>
+            Мова Google:<a class="chlng" href="#">English</a>
+        </center>
+    </div>
+    <footer id="footer">
+        <div class="line line_first">Україна</div>
+        <div class="line">
+            <ul class="menu_footer">
+                <li class="menu"><a class="elmn" href="#">Про Google</a></li>
+                <li class="menu"><a class="elmn" href="#">Реклама</a></li>
+                <li class="menu"><a class="elmn" href="#">Для бізнесу</a></li>
+                <li class="menu"><a class="elmn" href="#">Як працює Пошук</a></li>
+            </ul>
+            <ul class="menu_footer">
+                <li class="menu"><a class="elmn" href="#">Конфіденційність</a></li>
+                <li class="menu"><a class="elmn" href="#">Умови</a></li>
+                <li class="menu"><a class="elmn" href="#">Налаштування</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+</body>
+
